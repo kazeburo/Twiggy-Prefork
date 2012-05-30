@@ -10,7 +10,7 @@ __END__
 
 =head1 NAME
 
-Twiggy::Prefork - Preforked AnyEvent HTTP server for PSGI
+Twiggy::Prefork - Preforking AnyEvent HTTP server for PSGI
 
 =head1 SYNOPSIS
 
@@ -18,7 +18,7 @@ Twiggy::Prefork - Preforked AnyEvent HTTP server for PSGI
   
 =head1 DESCRIPTION
 
-Twiggy::Prefork Preforked AnyEvent HTTP server for PSGI based on Twiggy.
+Twiggy::Prefork is Preforking AnyEvent HTTP server for PSGI based on Twiggy.
 
 =head1 OPTIONS
 
