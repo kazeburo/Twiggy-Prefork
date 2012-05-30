@@ -9,3 +9,7 @@ __DATA__
 Masahiro Nagano
 kazeburo {at} gmail.com
 Twiggy::Prefork
+AnyEvent
+PSGI
+Preforking
+extentions
