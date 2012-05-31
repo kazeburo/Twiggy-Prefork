@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use parent qw/Twiggy::Server/;
 use Parallel::Prefork;
-use Try::Tiny;
 
 use constant DEBUG => $ENV{TWIGGY_DEBUG};
 
@@ -71,5 +70,7 @@ sub run {
 }
 
 1;
+
+__END__
 
 

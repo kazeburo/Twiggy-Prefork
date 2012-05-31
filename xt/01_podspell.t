@@ -13,3 +13,5 @@ AnyEvent
 PSGI
 Preforking
 extentions
+Superdaemon
+reqs

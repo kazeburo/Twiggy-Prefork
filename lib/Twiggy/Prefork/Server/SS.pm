@@ -1,6 +1,6 @@
 package Twiggy::Prefork::Server::SS;
 
-# almost all code stolen from Twiggy::Server::SS
+# almost all code are stolen from Twiggy::Server::SS
 
 use strict;
 use warnings;
@@ -88,3 +88,6 @@ sub _create_ss_tcp_server {
 }
 
 1;
+
+__END__
+
