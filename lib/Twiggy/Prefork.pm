@@ -105,6 +105,8 @@ Block Twiggy::Prefork worker process exiting until your jobs done.
 
 Masahiro Nagano E<lt>kazeburo {at} gmail.comE<gt>
 
+Shigeki Morimoto
+
 =head1 SEE ALSO
 
 L<Twiggy>, L<Parallel::Prefork>
