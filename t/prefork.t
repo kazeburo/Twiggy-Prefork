@@ -45,6 +45,7 @@ test_tcp(
             'max_reqs_per_child' => 10,
         );
         $server->run($app);
+        exit;
     },
 );
 

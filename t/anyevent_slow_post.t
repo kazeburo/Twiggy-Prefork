@@ -37,6 +37,7 @@ test_tcp(
         my $port = shift;
         my $server = Plack::Loader->load('Twiggy::Prefork', port => $port, host => '127.0.0.1');
         $server->run($app);
+        exit;
     },
 );
 
