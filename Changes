@@ -1,4 +1,7 @@
 Revision history for Perl extension Twiggy::Prefork
 
+0.02    Wed Jun 13 18:33:08 2012
+        - fixed tests, suppress Test::TCP warnings. no code changing
+
 0.01    Wed May 30 18:45:30 2012
         - original version
