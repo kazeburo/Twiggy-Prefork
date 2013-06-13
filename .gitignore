@@ -10,3 +10,10 @@ nytprof.out
 MANIFEST.bak
 *.sw[po]
 *~
+/Twiggy-Prefork-*
+/.build
+/_build_params
+/Build
+!Build/
+!META.json
+!LICENSE
