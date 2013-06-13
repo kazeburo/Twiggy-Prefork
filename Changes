@@ -2,6 +2,10 @@ Revision history for Perl extension Twiggy::Prefork
 
 {{$NEXT}}
 
+0.04 2013-06-13T07:16:44Z
+
+        - cleanup test and test_requires
+
 0.03 2013-06-13T06:49:33Z
 
         - re-packaging with Minilla
