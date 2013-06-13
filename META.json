@@ -25,11 +25,6 @@
       ]
    },
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Test::More" : "0"
-         }
-      },
       "configure" : {
          "requires" : {
             "CPAN::Meta" : "0",
@@ -49,6 +44,15 @@
          "requires" : {
             "Parallel::Prefork" : "0.13",
             "Twiggy" : "0.1020"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "LWP::UserAgent" : "0",
+            "Plack::Test::Suite" : "0",
+            "Test::More" : "0",
+            "Test::Requires" : "0",
+            "Test::TCP" : "2.00"
          }
       }
    },
