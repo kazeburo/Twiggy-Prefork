@@ -59,7 +59,7 @@ if set, randomizes the number of requests handled by a single worker process bet
 
 =back
 
-=head1 PSGI extentions
+=head1 PSGI extensions
 
 =over 4
 

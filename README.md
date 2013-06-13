@@ -42,7 +42,7 @@ Twiggy::Prefork is Preforking AnyEvent HTTP server for PSGI based on Twiggy. Thi
 
     if set, randomizes the number of requests handled by a single worker process between the value and that supplied by --max-reqs-per-child (default: none)
 
-# PSGI extentions
+# PSGI extensions
 
 - psgix.exit\_guard
 

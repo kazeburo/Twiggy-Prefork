@@ -27,7 +27,6 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.36",
             "Test::More" : "0"
          }
       },
