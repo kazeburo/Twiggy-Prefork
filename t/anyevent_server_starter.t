@@ -3,14 +3,13 @@ use Test::More;
 use Test::Requires qw(Server::Starter);
 use Test::TCP;
 use LWP::UserAgent;
-use Server::Starter qw(start_server);
 
 test_tcp(
     server => sub {
         my $port = shift;
 
-        start_server(
-            exec => [ $^X, '-Mblib', '-MPlack::Loader', '-e',
+        Server::Starter::start_server(
+            exec => [ $^X, '-MPlack::Loader', '-e',
                 q|Plack::Loader->load('Twiggy::Prefork', host => '127.0.0.1')->run(sub { [ '200', ['Content-Type' => 'text/plain'], [ 'Hello, Twiggy!' ] ] })| ],
             port => [ $port ]
         );

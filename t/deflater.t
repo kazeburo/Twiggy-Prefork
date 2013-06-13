@@ -1,13 +1,13 @@
 use strict;
 use warnings;
 use Test::More qw(no_diag);
-use Test::Requires qw( Plack::Middleware::Deflater LWP::UserAgent IO::Uncompress::Gunzip );
+use Test::Requires qw(Plack::Middleware::Deflater IO::Uncompress::Gunzip);
 use Test::TCP;
 use Plack::Loader;
 use Plack::Request;
 use HTTP::Response;
 use IO::Uncompress::Gunzip qw(gunzip $GunzipError);
-
+use LWP::UserAgent;
 use Plack::App::File;
 
 use HTTP::Request::Common;

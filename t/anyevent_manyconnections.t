@@ -1,17 +1,14 @@
 use strict;
 use warnings;
 use Test::More;
+use Plack::Loader;
+use Plack::Test::Suite;
+use HTTP::Request::Common;
 
 BEGIN {
     plan skip_all => 'Slow test skipped unless $ENV{TEST_SLOW} is set'
         unless $ENV{TEST_SLOW};
 }
-
-use Plack::Test::Suite;
-use AnyEvent;
-
-use HTTP::Request;
-use HTTP::Request::Common;
 
 my $LOOPS = 1024; # Default max fds on linux.
 

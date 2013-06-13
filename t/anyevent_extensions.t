@@ -1,10 +1,8 @@
 use strict;
 use warnings;
 use Test::More;
+use Plack::Loader;
 use Plack::Test::Suite;
-use AnyEvent;
-
-use HTTP::Request;
 use HTTP::Request::Common;
 
 local @Plack::Test::Suite::TEST = (

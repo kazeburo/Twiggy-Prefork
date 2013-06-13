@@ -1,4 +1,6 @@
 language: perl
+before_script:
+  - cpanm --quiet -n Server::Starter Plack::Middleware::Deflater IO::Uncompress::Gunzip
 perl:
   - 5.12
   - 5.14
