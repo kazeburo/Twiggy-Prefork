@@ -2,6 +2,10 @@ Revision history for Perl extension Twiggy::Prefork
 
 {{$NEXT}}
 
+0.03 2013-06-13T06:49:33Z
+
+        - re-packaging with Minilla
+
 0.02    Wed Jun 13 18:33:08 2012
         - fixed tests, suppress Test::TCP warnings. no code changing
 
