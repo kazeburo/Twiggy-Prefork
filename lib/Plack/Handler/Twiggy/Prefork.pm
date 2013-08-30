@@ -1,5 +1,7 @@
 package Plack::Handler::Twiggy::Prefork;
+
 use strict;
+use warnings;
 
 sub new {
     my $class = shift;
