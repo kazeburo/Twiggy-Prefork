@@ -34,10 +34,10 @@ my $kid;
 do {
     $kid = kill 0, $pid;
 } while !$kid;
-sleep 3;
+sleep 5;
 # send signal to child process
 kill HUP => $pid;
-sleep 3;
+sleep 5;
 kill TERM => $pid;
 waitpid($pid, 0);
 
