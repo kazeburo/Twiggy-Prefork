@@ -9,5 +9,7 @@ on test => sub {
     requires 'LWP::UserAgent';
     requires 'Plack::Test::Suite';
     requires 'Test::Requires';
+    requires 'Test::SharedFork';
+    requires 'Capture::Tiny';
 };
 

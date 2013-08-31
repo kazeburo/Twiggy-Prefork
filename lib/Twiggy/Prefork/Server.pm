@@ -61,6 +61,7 @@ sub run {
         $pm->start and next;
         DEBUG && warn "[$$] start child";
         my $exit = $self->{exit_guard};
+        delete $SIG{TERM};
         my $w; $w = AE::signal TERM => sub { $exit->end; undef $w };
         $exit->recv;
         DEBUG && warn "[$$] end child";
