@@ -63,7 +63,7 @@ sub run {
         my $exit = $self->{exit_guard};
         delete $SIG{TERM};
         my $w; $w = AE::signal TERM => sub { 
-            warn "[$$] recieved signal TERM";
+            warn "[$$] recieved signal TERM" if DEBUG; 
             $exit->end;
             undef $w
         };

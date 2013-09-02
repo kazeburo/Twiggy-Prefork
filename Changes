@@ -2,6 +2,11 @@ Revision history for Perl extension Twiggy::Prefork
 
 {{$NEXT}}
 
+0.06 2013-09-02T05:54:12Z
+
+        - fixed not working TERM signal (Thanks nhayashi)
+          https://github.com/kazeburo/Twiggy-Prefork/pull/1
+
 0.05 2013-08-30T07:11:25Z
 
         - fixed requires
