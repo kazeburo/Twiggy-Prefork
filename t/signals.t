@@ -26,9 +26,9 @@ if ($pid == 0) {
     my @start_lines = grep { $_ =~ /^\[\d+\] start child/ } @lines;
     my @end_lines = grep { $_ =~ /^\[\d+\] end child/ } @lines;
     my @signal_lines = grep { $_ =~ /^\[\d+\] recieved signal/ } @lines;
-    ok @start_lines == $max_workers * 2, 'start child';
-    ok @end_lines == $max_workers * 2, 'end child';
-    ok @signal_lines == $max_workers * 2, 'signal child';
+    is scalar @start_lines, $max_workers * 2, 'start child';
+    is scalar @end_lines, $max_workers * 2, 'end child';
+    is scalar @signal_lines, $max_workers * 2, 'signal child';
     exit 0;
 }
 # ping to child process
