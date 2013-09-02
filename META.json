@@ -50,10 +50,12 @@
       },
       "test" : {
          "requires" : {
+            "Capture::Tiny" : "0",
             "LWP::UserAgent" : "0",
             "Plack::Test::Suite" : "0",
             "Test::More" : "0",
             "Test::Requires" : "0",
+            "Test::SharedFork" : "0",
             "Test::TCP" : "2.00"
          }
       }
@@ -72,6 +74,7 @@
    },
    "version" : "0.05",
    "x_contributors" : [
+      "nhayashi <hayashi.naritoshi@dena.jp>",
       "Masahiro Nagano <kazeburo@gmail.com>"
    ]
 }
