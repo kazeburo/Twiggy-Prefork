@@ -89,7 +89,7 @@ AnyEvent::CondVar object. You can make graceful stop mechanism with this variabl
       $channel->put([$env->{psgix.exit_guard}]);
       $cv->send;
     };
-    return sun {
+    return sub {
       my $start_response = shift;
       $cv->cb(sub {
         $start_response->([200,['Content-Type'=>'text/plain'],['OK']]);
