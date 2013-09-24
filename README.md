@@ -70,7 +70,7 @@ Twiggy::Prefork is Preforking AnyEvent HTTP server for PSGI based on Twiggy. Thi
             $channel->put([$env->{psgix.exit_guard}]);
             $cv->send;
           };
-          return sun {
+          return sub {
             my $start_response = shift;
             $cv->cb(sub {
               $start_response->([200,['Content-Type'=>'text/plain'],['OK']]);

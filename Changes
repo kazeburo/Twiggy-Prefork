@@ -2,6 +2,10 @@ Revision history for Perl extension Twiggy::Prefork
 
 {{$NEXT}}
 
+0.07 2013-09-24T00:17:14Z
+
+        - fixed typo in POD
+
 0.06 2013-09-02T05:54:12Z
 
         - fixed not working TERM signal (Thanks nhayashi)
