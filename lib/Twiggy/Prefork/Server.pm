@@ -10,9 +10,19 @@ use constant DEBUG => $ENV{TWIGGY_DEBUG};
 sub new {
     my ($class, %args) = @_;
     my $self = $class->SUPER::new(%args);
+
+    my $disable_count_reqs_per_child =
+        (exists $args{count_reqs_per_child} && !$args{count_reqs_per_child}) ? 1 : 0;
+
+    if ( $disable_count_reqs_per_child && $args{max_reqs_per_child} ) {
+        die "either disable_count_reqs_per_child or max_reqs_per_child should be enabled.";
+    }
+
     $self->{max_workers} = $args{max_workers} || 10;
+    $self->{disable_count_reqs_per_child} = $disable_count_reqs_per_child;
     $self->{max_reqs_per_child} = $args{max_reqs_per_child} || 100;
     $self->{min_reqs_per_child} = $args{min_reqs_per_child} || 0;
+
     $self;
 }
 
@@ -26,7 +36,7 @@ sub _accept_handler {
     my $self = shift;
 
     my $cb = $self->SUPER::_accept_handler( @_ );
-    return sub {
+    return $self->{disable_count_reqs_per_child} ? $cb : sub {
         my ( $sock, $peer_host, $peer_port ) = @_;
         $self->{reqs_per_child}++;
         $cb->( $sock, $peer_host, $peer_port );

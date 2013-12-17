@@ -57,6 +57,10 @@ max. number of requests to be handled before a worker process exits (default: 10
 
 if set, randomizes the number of requests handled by a single worker process between the value and that supplied by --max-reqs-per-child (default: none)
 
+=item disable_count_reqs_per_child
+
+if set, not count number of request handled by worker process. It means working simple prefork L<Twiggy> server. ( default: none )
+
 =back
 
 =head1 PSGI extensions
