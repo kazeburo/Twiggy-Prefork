@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::More qw(no_diag);
 use Test::TCP;
-use Plack::Loader;
+use Plack::Runner;
 use Plack::Request;
 use LWP::UserAgent;
 
@@ -37,14 +37,19 @@ test_tcp(
     },
     server => sub {
         my $port = shift;
-        my $server = Plack::Loader->load(
-            'Twiggy::Prefork', 
-            port => $port, 
-            host => '127.0.0.1',
-            'max_workers' => 3,
-            'disable_count_reqs_per_child' => 1,
+        my $runner = Plack::Runner->new;
+        $runner->parse_options(
+            qw(
+            --server Twiggy::Prefork
+            --host 127.0.0.1
+            --max_workers 3
+            --disable_count_reqs_per_child
+            --access-log ""
+            --port
+            ),
+            $port,
         );
-        $server->run($app);
+        $runner->run($app);
         exit;
     },
 );
