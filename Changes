@@ -2,6 +2,10 @@ Revision history for Perl extension Twiggy::Prefork
 
 {{$NEXT}}
 
+0.08 2013-12-20T07:08:59Z
+
+        - If max_reqs_per_child => 0, child process is not existed by number of requests (Thanks soh335)
+
 0.07 2013-09-24T00:17:14Z
 
         - fixed typo in POD

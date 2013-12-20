@@ -36,7 +36,7 @@ Twiggy::Prefork is Preforking AnyEvent HTTP server for PSGI based on Twiggy. Thi
 
 - max\_reqs\_per\_child
 
-    max. number of requests to be handled before a worker process exits (default: 100)
+    max. number of requests to be handled before a worker process exits. If passed 0, child process is not existed by number of requests (default: 100).
 
 - min\_reqs\_per\_child
 
