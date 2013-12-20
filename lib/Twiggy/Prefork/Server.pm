@@ -10,9 +10,11 @@ use constant DEBUG => $ENV{TWIGGY_DEBUG};
 sub new {
     my ($class, %args) = @_;
     my $self = $class->SUPER::new(%args);
+
     $self->{max_workers} = $args{max_workers} || 10;
-    $self->{max_reqs_per_child} = $args{max_reqs_per_child} || 100;
+    $self->{max_reqs_per_child} = defined $args{max_reqs_per_child} ? $args{max_reqs_per_child} : 100;
     $self->{min_reqs_per_child} = $args{min_reqs_per_child} || 0;
+
     $self;
 }
 
@@ -26,7 +28,7 @@ sub _accept_handler {
     my $self = shift;
 
     my $cb = $self->SUPER::_accept_handler( @_ );
-    return sub {
+    return $self->{max_reqs_per_child} == 0 ? $cb : sub {
         my ( $sock, $peer_host, $peer_port ) = @_;
         $self->{reqs_per_child}++;
         $cb->( $sock, $peer_host, $peer_port );
