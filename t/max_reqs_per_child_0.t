@@ -33,7 +33,7 @@ test_tcp(
             push @code, $res->code if $res->code == 200;
         }
         is scalar @code, $req;
-        ok scalar keys %res == 3;
+        ok scalar keys %res <= 3;
     },
     server => sub {
         my $port = shift;
