@@ -51,15 +51,11 @@ number of worker processes (default: 10)
 
 =item max_reqs_per_child
 
-max. number of requests to be handled before a worker process exits (default: 100)
+max. number of requests to be handled before a worker process exits. If passed 0, child process is not existed by number of requests (default: 100).
 
 =item min_reqs_per_child
 
 if set, randomizes the number of requests handled by a single worker process between the value and that supplied by --max-reqs-per-child (default: none)
-
-=item disable_count_reqs_per_child
-
-if set, not count number of request handled by worker process. It means working simple prefork L<Twiggy> server. ( default: none )
 
 =back
 

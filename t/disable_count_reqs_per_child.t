@@ -43,8 +43,8 @@ test_tcp(
             --server Twiggy::Prefork
             --host 127.0.0.1
             --max_workers 3
-            --disable_count_reqs_per_child
-            --access-log ""
+            --max-reqs-per-child 0
+            --env test
             --port
             ),
             $port,

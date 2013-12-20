@@ -4,38 +4,17 @@ use warnings;
 use Test::More;
 use Twiggy::Prefork::Server;
 
-{
-    local $@;
-    eval {
-        Twiggy::Prefork::Server->new(
-            max_reqs_per_child => 100,
-            count_reqs_per_child => 0, # means disable_count_reqs_per_child
-        );
-    };
+my $server = Twiggy::Prefork::Server->new(
+    max_reqs_per_child => 100,
+);
+is $server->{max_reqs_per_child}, 100, 'passed max_reqs_per_child';
 
-    like $@, qr/^either disable_count_reqs_per_child or max_reqs_per_child should be enabled\./;
-}
+my $server = Twiggy::Prefork::Server->new(
+    max_reqs_per_child => 0
+);
+is $server->{max_reqs_per_child}, 0, 'off max_reqs_per_child';
 
-{
-    local $@;
-    eval {
-        Twiggy::Prefork::Server->new(
-            count_reqs_per_child => 1, # means not pass disable_count_reqs_per_child
-        );
-    };
-
-    ok ! $@;
-}
-
-{
-    local $@;
-    eval {
-        Twiggy::Prefork::Server->new(
-            max_reqs_per_child => 100,
-        );
-    };
-
-    ok ! $@;
-}
+my $server = Twiggy::Prefork::Server->new;
+is $server->{max_reqs_per_child}, 100, 'set default value';
 
 done_testing;
